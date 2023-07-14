@@ -2,7 +2,7 @@
   "builds": [{
       "src": "Api/wsgi.py",
       "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.10" }
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.9" }
   }],
   "routes": [
     {
@@ -14,6 +14,6 @@
     "env": {
       "PYTHON_VERSION": "3.8.0"
     },
-    "Command": "pip install -r requirements.txt && python manage.py migrate && pcython manage.py collectstatic --noinput"
+    "Command": "pip install -r requirements.txt && python manage.py"
   }
 }
