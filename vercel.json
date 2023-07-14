@@ -1,13 +1,19 @@
 {
-    "builds": [{
-        "src": "Api/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.10" }
-    }],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "Api/wsgi.py"
-        }
-    ]
+  "builds": [{
+      "src": "Api/wsgi.py",
+      "use": "@vercel/python",
+      "config": { "maxLambdaSize": "15mb", "runtime": "python3.8" }
+  }],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "Api/wsgi.py"
+    }
+  ],
+  "build": {
+    "env": {
+      "PYTHON_VERSION": "3.8.0"
+    },
+    "Command": "pip install -r requirements.txt && python manage.py migrate && pcython manage.py collectstatic --noinput"
+  }
 }
