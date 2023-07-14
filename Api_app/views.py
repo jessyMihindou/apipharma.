@@ -16,7 +16,7 @@ def accueil(request):
 
 
 def predict_disease(request):
-    df = pd.read_csv(r'C:\Users\jessy\PycharmProjects\Api\Api_app\static\Api_app\Training.csv')
+    df = pd.read_csv('Api_app/static/Api_app/Training.csv')
     df = df.drop(columns='Unnamed: 133')
     label_encoder = LabelEncoder()
     df['prognosis_encoded'] = label_encoder.fit_transform(df['prognosis'])
@@ -28,11 +28,11 @@ def predict_disease(request):
         patient_symptoms = request.POST.getlist('symptoms')
 
         # Charger le modèle à partir du fichier
-        with open(r'C:\Users\jessy\PycharmProjects\Api\Api_app\static\Api_app\model.pkl','rb') as file:
+        with open('Api_app/static/Api_app/model.pkl','rb') as file:
             model = pickle.load(file)
-        with open(r'C:\Users\jessy\PycharmProjects\Api\Api_app\static\Api_app\clf.pkl','rb') as file:
+        with open('Api_app/static/Api_app/clf.pkl','rb') as file:
             clf = pickle.load(file)
-        with open(r'C:\Users\jessy\PycharmProjects\Api\Api_app\static\Api_app\rdm.pkl','rb') as file:
+        with open('Api_app/static/Api_app/rdm.pkl','rb') as file:
             rdm = pickle.load(file)
 
         patient_data = {}
