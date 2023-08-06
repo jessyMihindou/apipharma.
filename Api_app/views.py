@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.http import JsonResponse
 import numpy as np
 import pickle
@@ -7,6 +6,8 @@ from sklearn.preprocessing import LabelEncoder
 from scipy.stats import mode
 from django.shortcuts import render
 
+import warnings
+warnings.filterwarnings("ignore", message="X does not have valid feature names")
 
 
 def replace_underscore(value):

@@ -22,5 +22,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('Prediction/', views.predict_disease, name='predict_disease'),
     path('' , views.accueil, name = 'acceuil')
-
 ]
