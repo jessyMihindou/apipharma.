@@ -1,0 +1,38 @@
+dimanche 6 août 2023
+16:19
+
+pymsalruntime==0.13.9
+pywin32==306
+
+Commandes
+
+
+Commandes:
+https://geekflare.com/fr/docker-commands/
+
+From <https://meet.google.com/okm-bfcq-eih?authuser=0>
+
+Etape 1
+
+Lancement de l'image
+
+docker build -t apipharma .
+
+Etape 2 versionnage (facultative)
+
+(base) (venv) PS C:\Users\jessy\PycharmProjects\Api> docker build -t apipharma:0.0.1 .   Le versinnage
+
+
+Etape 3 Deployement sur le container
+docker run -d -p 5000:5000 moneyshome:latest
+
+docker run -d -p  5000:8000 apipharma:0.0.5: lancement de la dernière version du container
+
+Etape 4
+
+ docker ps => show container lancés
+
+Puis lancer avec : docker logs "id_container"
+
+
+> docker exec -it id_container bash
